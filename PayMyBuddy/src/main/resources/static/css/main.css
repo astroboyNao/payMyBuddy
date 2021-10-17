@@ -1,5 +1,4 @@
 h1{
-	color:#0000FF;
 }
 
 h2{
@@ -10,10 +9,58 @@ footer{
     margin-top:60px;
 }
 
+.navbar {
+	margin-bottom: 0px;
+}
 .navbar-nav{
 	float: right;
 }
 
 .container-form-transaction {
 	display: inline-flex;
+}
+
+.button {
+	background: rgb(34,121,9);
+	background: linear-gradient(90deg, rgba(34,121,9,1) 59%, rgba(215,255,0,1) 100%);
+	color: white;
+	border-radius: 4px;
+    border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	padding: 10px;
+	margin-bottom: 30px;
+}
+
+a.visited{
+	color:white;
+}
+
+fieldset {
+    border-radius: 25px;
+    border: 2px solid lightgrey;
+    padding: 40px
+}
+
+.title {
+	background: rgb(34,121,9);
+	color: white;
+		
+}
+
+.select-connection {
+	padding: 20px;
+    background-color: lightgray;
+    margin-top: 20px 
+}
+
+.my-transactions {
+	padding: 10px;
+	
+}
+.pagination {
+	margin-left:33%
 }

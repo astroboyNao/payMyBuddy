@@ -24,6 +24,7 @@ public class Connection {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@OneToOne
 	private User userTarget;
 	private String description;
 	@OneToMany

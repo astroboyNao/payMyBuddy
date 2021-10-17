@@ -19,67 +19,71 @@
 
 <div class="container">
 
-	<div class="container-form-transaction">
-	  <div class="p-1">  
-	  	<select class="form-control" id="selectConnection">
+	<div class="row">
+		<div class="col-md-2">Send Money</div>
+		<div class="col-md-offset-10"><input type="submit" class="btn btn-lg btn-primary btn-block" value="Add Connection"/></div>
+	</div>
+	
+	<div class="row select-connection">
+	  <div class="col-md-4">  
+	  	<select class="form-control input-lg" id="selectConnection">
 		    <option >Choose Connection...</option>
 		    <option value="1">One</option>
 		    <option value="2">Two</option>
 		    <option value="3">Three</option>
   		</select>
   	  </div>
-	  <div class="p-2"><input type="number" name="amount" id="username" class="form-control input-lg"
-                               placeholder="amount" required="true" autofocus="true"/></div>
-	  <div class="p-3"><input type="submit" class="btn btn-lg btn-primary btn-block" value="Pay"/></div>
+	  <div class="col-md-4"><input type="number" name="amount" id="username" class="form-control input-lg" placeholder="amount" required="true" autofocus="true"/></div>
+	  <div class="col-md-4"><input type="submit" class="btn btn-lg btn-primary btn-block" value="Pay"/></div>
 	</div>
+	
 	</div>
-
 <div class="container">
+	<div class ="row">
+	<div class="col-mod4 my-transactions">My Transactions</div>
+	</div>
     <div class="row">
-        <div class="col-lg-10 mt-5 mb-5">
+        <div class="col-md-12">
             <table id="example" class="table table-bordered" style="width: 100%">
                 <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
+                <tr class="title">
+                    <th>Connection</th>
+                    <th>Description</th>
+                    <th>Amount</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="employee : ${employees.page.content}">
-                    <td th:text="${employee.name}">Name</td>
-                    <td th:text="${employee.position}">Position</td>
-                    <td th:text="${employee.office}">Office</td>
-                    <td th:text="${#dates.format(employee.startDate, 'dd.MM.yyyy')}">Start date</td>
-                    <td th:text="'$' + ${#numbers.formatDecimal(employee.salary, 0, 'COMMA', 2, 'POINT')}">Salary</td>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Office</td>
                 </tr>
                 </tbody>
             </table>
 
-            <nav aria-label="Page navigation" class="paging">
-                <ul class="pagination" th:if="${employees.page.totalPages > 1}">
-                    <li class="page-item" th:classappend="${!employees.paging.isPrevEnabled()? 'disabled' : ''}">
-                        <a class="page-link" th:href="@{'/?pageNumber=' + ${employees.paging.pageNumber - 1}}"
-                           tabindex="-1">Previous</a>
-                    </li>
-                    <th:block th:each="item : ${employees.paging.getItems()}">
-                        <li class="page-item" th:classappend="${item.index == employees.paging.pageNumber? 'active' : ''}"
-                            th:if="${item.pageItemType.name() == 'PAGE'}">
-                            <a class="page-link" th:href="@{'/?pageNumber=' + ${item.index}}"
-                               th:text="${item.index}"></a>
-                        </li>
-                        <li class="page-item disabled" th:if="${item.pageItemType.name() == 'DOTS'}">
-                            <a class="page-link" href="#">...</a>
-                        </li>
-                    </th:block>
-                    <li class="page-item" th:classappend="${!employees.paging.isNextEnabled()? 'disabled' : ''}">
-                        <a class="page-link" th:href="@{'/?pageNumber=' + ${employees.paging.pageNumber + 1}}">Next</a>
-                    </li>
-                </ul>
-            </nav>
+            
         </div>
+        <div class="col-md-12">
+	        <nav aria-label="Page navigation">
+			  <ul class="pagination">
+			    <li>
+			      <a href="#" aria-label="Previous">
+			        <span aria-hidden="true">&laquo;</span>
+			      </a>
+			    </li>
+			    <li><a href="#">1</a></li>
+			    <li><a href="#">2</a></li>
+			    <li><a href="#">3</a></li>
+			    <li><a href="#">4</a></li>
+			    <li><a href="#">5</a></li>
+			    <li>
+			      <a href="#" aria-label="Next">
+			        <span aria-hidden="true">&raquo;</span>
+			      </a>
+			    </li>
+			  </ul>
+			</nav>
+		</div>
     </div>
 </div>
 
