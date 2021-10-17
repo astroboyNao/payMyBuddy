@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/header :: header-css"/>
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"/>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="@{/home}">Home</a></li>
+     <li class="breadcrumb-item active">Contact</li>
+  </ol>
+</nav>
+
+<div class="container">
+
+    <div class="starter-template">
+        <h1>Contactez-nous !</h1>
+
+    </div>
+
+</div>
+<!-- /.container -->
+
+</body>
+</html>
