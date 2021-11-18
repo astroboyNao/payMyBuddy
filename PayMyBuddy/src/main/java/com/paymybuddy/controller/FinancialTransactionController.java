@@ -10,42 +10,43 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.paymybuddy.dto.UserDetail;
-import com.paymybuddy.form.ConnectionForm;
+import com.paymybuddy.form.FinancialTransactionForm;
 import com.paymybuddy.service.UserService;
 
 import lombok.AllArgsConstructor;
 
 /**
- * The Class ConnectionController.
+ * The Class FinancialTransactionController.
  */
 @Controller
 
 /**
- * Instantiates a new connection controller.
+ * Instantiates a new financial transaction controller.
  *
  * @param userService the user service
  */
 @AllArgsConstructor
-public class ConnectionController {
-
+public class FinancialTransactionController {
+	
 	/** The logger. */
-	private static Logger logger = LoggerFactory.getLogger(ConnectionController.class);
-
+	private static Logger logger = LoggerFactory.getLogger(FinancialTransactionController.class);
+	
 	/** The user service. */
 	UserService userService;
 
 	/**
-	 * Creates the connection.
+	 * Creates the financial transaction.
 	 *
-	 * @param connectionForm the connection form
+	 * @param financialTransactionForm the financial transaction form
 	 * @param session the session
 	 * @return the string
 	 */
-	@RequestMapping(value = "/connections", method = RequestMethod.POST)
-	public String createConnection(@ModelAttribute ConnectionForm connectionForm, HttpSession session) {
-		logger.info("creation d'une connection");
+	@RequestMapping(value = "/financialTransactions", method = RequestMethod.POST)
+	public String createFinancialTransaction(@ModelAttribute FinancialTransactionForm financialTransactionForm,
+			HttpSession session) {
+		logger.info("creation d'une transaction financiere");
 		UserDetail userDetail = (UserDetail) session.getAttribute("userDetail");
-		userDetail = userService.addConnection(userDetail, connectionForm);
+		userDetail = userService.addFinancialtransaction(userDetail, financialTransactionForm);
 		session.setAttribute("userDetail", userDetail);
 		return "redirect:transfer";
 	}

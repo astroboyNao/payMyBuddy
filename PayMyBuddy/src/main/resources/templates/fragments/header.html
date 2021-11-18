@@ -3,7 +3,7 @@
     <div th:fragment="header-css">
         <!-- this is header-css -->
         <link rel="stylesheet" type="text/css"
-              href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+        th:href="@{/webjars/bootstrap/4.1.3/css/bootstrap.min.css} "/>
 
         <link rel="stylesheet" th:href="@{/css/main.css}"
               href="../../css/main.css" />
@@ -12,20 +12,20 @@
 <body>
 <div th:fragment="header">
     <!-- this is header -->
-    <nav class="navbar">
-            <div class="navbar-header" >
-                <a class="button" >PayMyBuddy</a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a th:href="@{/home}">Home</a></li>
-                    <li><a th:href="@{/transfer}">Transfer</a></li>
-                    <li><a th:href="@{/profil}">Profile</a></li>
-                    <li><a th:href="@{/contact}">Contact</a></li>
-                    <li><a th:href="@{/logout}">Log off</a></li>
-                </ul>
-            </div>
-    </nav>
+    
+    <nav class="navbar navbar-expand-lg  bg-light justify-content-between">
+	  <a class="button navbar-brand" >PayMyBuddy</a>
+	 
+	  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+	    <div class="navbar-nav">
+	      <a class="nav-item nav-link active" th:href="home">Home <span class="sr-only">(current)</span></a>
+	      <a class="nav-item nav-link" th:href="transfer">Transfer</a>
+	      <a class="nav-item nav-link" th:href="profil">Profile</a>
+	      <a class="nav-item nav-link" th:href="contact">Contact</a>
+	      <a class="nav-item nav-link" th:href="logout">Contact</a>
+	    </div>
+	  </div>
+	</nav>
 </div>
 
 </body>

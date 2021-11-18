@@ -1,11 +1,34 @@
 package com.paymybuddy.repository;
 
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import java.util.List;
 
 import com.paymybuddy.repository.entity.User;
 
-@Repository
-public interface UserRepository extends CrudRepository<User, Long> {
+/**
+ * The Interface UserRepository.
+ */
+public interface UserRepository {
+	
+	/**
+	 * Creates the user.
+	 *
+	 * @param user the user
+	 * @return the user
+	 */
+	public User createUser(User user);
 
+	/**
+	 * Connect user.
+	 *
+	 * @param user the user
+	 * @return the user
+	 */
+	public User connectUser(User user);
+
+	/**
+	 * Select all.
+	 *
+	 * @return the list
+	 */
+	public List<User> selectAll();
 }

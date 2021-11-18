@@ -16,11 +16,12 @@
 
 <div class="container">
 
-    <div class="starter-template">
+    <div class="starter-template"  >
         <h1>Profil</h1>
 
-        <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-        <form th:action="@{/logout}" method="post">
+        <h1 th:inline="text">Hello </h1>
+        <div th:text="${ session.userDetail.user.email }"></div>
+        <form th:action="@{/logout}" method="get">
             <input type="submit" value="Sign Out"/>
         </form>
     </div>
